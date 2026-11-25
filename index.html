@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AeroQubit — Designing an Electric Aircraft</title>
+<meta name="description" content="An unmanned electric aircraft that watches over an area for more than four hours, designed with simulation, machine learning and quantum algorithms.">
+<link rel="canonical" href="https://aeroqubit.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AeroQubit — Designing an Electric Aircraft">
+<meta property="og:description" content="An unmanned electric aircraft that watches over an area for more than four hours, designed with simulation, machine learning and quantum algorithms.">
+<meta property="og:image" content="https://aeroqubit.com/assets/img/og.jpg">
+<meta property="og:url" content="https://aeroqubit.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d0f12">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="wordmark" href="index.html">AEROQUBIT</a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <ul class="menu">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="the-project.html">The Project</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="interactive-apps.html">Interactive Apps</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+
+<section class="flight" aria-label="Introduction">
+  <div class="flight-stage">
+    <img class="poster" src="assets/img/poster_hero.webp" alt="" aria-hidden="true">
+    <video muted playsinline preload="none" data-src="assets/video/flight.mp4" aria-hidden="true"></video>
+    <div class="flight-copy">
+      <div class="wrap">
+        <h1>Designing an Electric Aircraft with Machine Learning and Quantum Methods</h1>
+        <p class="lead">An unmanned electric aircraft that watches over an area for more than four hours, nearly silent from the ground.</p>
+        <a class="btn" href="the-project.html">Explore the project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div class="flight-end" aria-hidden="true">
+      <div class="wrap"><span class="label">The final design</span><p>Six electric motors, 721&nbsp;kg, 11.76&nbsp;m wingspan</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap stats">
+    <div class="stat rv"><div class="num"><span data-count="24.4">24.4</span></div><p>Cruise lift-to-drag ratio of the final design</p></div>
+    <div class="stat rv d1"><div class="num"><span data-count="4.11">4.11</span><small>h</small></div><p>On station over an area 100 km from base</p></div>
+    <div class="stat rv d2"><div class="num"><span data-count="1" data-from="100">1</span><small>%</small></div><p>Gap between the machine-learning prediction and the detailed simulation</p></div>
+    <div class="stat rv d3"><div class="num"><span data-count="90.27">90.27</span><small>%</small></div><p>Agreement of the fast solver with NASA's X-57 simulations</p></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="rv">Hours over the area, not minutes</h2>
+      <p class="rv d1">Wildfires, floods and search-and-rescue missions need eyes in the sky for hours. The aircraft flies 100 km out, watches the area from 3000 m and lands with a 30-minute reserve.</p>
+    </div>
+    <div class="profile rv d1">
+<svg class="d" viewBox="0 0 1200 400" role="img" aria-label="Mission profile: climb, 100 km transit at 3000 m, 4.11 hours on station, 100 km return, descent">
+  <line class="ground" x1="40" y1="330" x2="1160" y2="330"/>
+  <path class="track" d="M110 330 L230 110 L970 110 L1090 330"/>
+  <g class="seg" data-at="0.0"><text x="150" y="226" text-anchor="end">Climb</text></g>
+  <g class="seg" data-at="0.2"><text x="315" y="86" text-anchor="middle">100 km</text><text x="315" y="150" text-anchor="middle">at 3000 m</text></g>
+  <g class="seg" data-at="0.34"><line class="flown station" x1="400" y1="110" x2="800" y2="110"/><text class="big" x="600" y="84" text-anchor="middle">4.11 h</text><text x="600" y="150" text-anchor="middle">on station</text></g>
+  <g class="seg" data-at="0.66"><text x="885" y="86" text-anchor="middle">100 km</text><text x="885" y="150" text-anchor="middle">back to base</text></g>
+  <g class="seg" data-at="0.8"><text x="1050" y="226">Descent</text></g>
+  <path class="flown flown-path" d="M110 330 L230 110 L970 110 L1090 330"/>
+  <circle class="halo" cx="110" cy="330" r="16"/>
+  <circle class="plane" cx="110" cy="330" r="6"/>
+  <text x="110" y="368" text-anchor="middle">Base</text><text x="1090" y="368" text-anchor="middle">Base</text>
+</svg>
+<svg class="m" viewBox="0 0 640 430" role="img" aria-label="Mission profile: 100 km out at 3000 m, 4.11 hours on station, 100 km back">
+  <line class="ground" x1="10" y1="360" x2="630" y2="360"/>
+  <path class="track" d="M40 360 L110 140 L530 140 L600 360"/>
+  <g class="seg" data-at="0.0"></g>
+  <g class="seg" data-at="0.26"><text x="155" y="110" text-anchor="middle">100 km</text><text x="155" y="190" text-anchor="middle">out</text></g>
+  <g class="seg" data-at="0.36"><line class="flown station" x1="200" y1="140" x2="440" y2="140"/><text class="big" x="320" y="112" text-anchor="middle">4.11 h</text><text x="320" y="190" text-anchor="middle">on station</text></g>
+  <g class="seg" data-at="0.64"><text x="485" y="110" text-anchor="middle">100 km</text><text x="485" y="190" text-anchor="middle">back</text></g>
+  <path class="flown flown-path" d="M40 360 L110 140 L530 140 L600 360"/>
+  <circle class="halo" cx="40" cy="360" r="18"/>
+  <circle class="plane" cx="40" cy="360" r="8"/>
+  <text x="40" y="404" text-anchor="middle">Base</text><text x="600" y="404" text-anchor="middle">Base</text>
+</svg></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><h2 class="rv">Three methods, one design</h2></div>
+    <div class="cols">
+      <div class="rv"><h3>Simulation</h3><p>Fast solvers to compare layouts, and a detailed simulation of the complete aircraft to confirm the result.</p></div>
+      <div class="rv d1"><h3>Machine learning</h3><p>A model trained on fast simulations predicts lift and drag almost instantly, where a detailed simulation takes hours.</p></div>
+      <div class="rv d2"><h3>Quantum algorithms</h3><p>Three small quantum algorithms, run on a simulator, took on airflow, wing forces and the motor layout.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap">
+    <div class="head"><h2 class="rv">What the study found</h2></div>
+    <div class="rows">
+      <div class="row">
+        <div class="rv"><div class="bars" role="img" aria-label="Cruise lift-to-drag ratio of six motor layouts; propellers over the wing score highest at 22.45">
+<div class="bar" data-w="83.4"><span class="id">V0</span><div class="track"><div class="fill"></div><span class="name">NASA's X-57 layout</span></div><span class="val">20.01</span></div>
+<div class="bar" data-w="76.2"><span class="id">V1</span><div class="track"><div class="fill"></div><span class="name">Cruise motors only</span></div><span class="val">18.28</span></div>
+<div class="bar" data-w="81.4"><span class="id">V2</span><div class="track"><div class="fill"></div><span class="name">High-lift propellers</span></div><span class="val">19.53</span></div>
+<div class="bar best" data-w="93.5"><span class="id">V3</span><div class="track"><div class="fill"></div><span class="name">Propellers over the wing</span></div><span class="val">22.45</span></div>
+<div class="bar" data-w="90.6"><span class="id">V4</span><div class="track"><div class="fill"></div><span class="name">Over the wing at 20°</span></div><span class="val">21.74</span></div>
+<div class="bar" data-w="86.5"><span class="id">V5</span><div class="track"><div class="fill"></div><span class="name">Propellers on the fuselage</span></div><span class="val">20.77</span></div>
+        </div><p class="bars-note">Cruise lift-to-drag ratio in the fast solver, same airframe</p></div>
+        <div class="text rv d1"><span class="label">Aerodynamics</span><h3>Propellers over the wing work best</h3><p>Six motor layouts were compared on the same airframe. Placing the propellers over the wing gave the most efficient cruise, ahead of NASA's own X-57 layout.</p></div>
+      </div>
+      <div class="row flip">
+        <div class="rv media-right"><div class="mlvid"><video muted playsinline preload="metadata" poster="assets/img/poster_ml.webp" aria-label="A thousand candidate designs, and the one the model chose"><source src="assets/video/ml_designs.mp4" type="video/mp4"></video></div>
+          <div class="vs"><div><div class="num">10 000 h</div><p>to simulate every candidate in detail</p></div><div><div class="num">10 h</div><p>for the one the model chose</p></div></div></div>
+        <div class="text rv d1"><span class="label">Efficiency</span><h3>One detailed simulation instead of a thousand</h3><p>A detailed run with propellers takes about ten hours. Machine learning picked one design out of a thousand, and a single detailed run confirmed its prediction.</p></div>
+      </div>
+      <div class="row">
+        <figure class="fig rv reveal"><div class="frame photo"><img src="assets/img/tunnel.webp" alt="Steam flowing over the 3D-printed wing section in the wind tunnel" loading="lazy" decoding="async"></div></figure>
+        <div class="text rv d1"><span class="label">Validation</span><h3>The wind tunnel agrees</h3><p>In a self-built wind tunnel, steam showed the flow over a 3D-printed wing section starting to separate at about 14°, in the same pattern as the simulation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap closing">
+    <div class="rv"><h2>Explore the project</h2><p>Five stages, from the first motor layout to the scale model.</p></div>
+    <div class="btns rv d1"><a class="btn" href="the-project.html">The Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="interactive-apps.html">Try the models</a></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <a class="wordmark" href="index.html">AEROQUBIT</a>
+      <ul>
+      <li><a href="the-project.html">The Project</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="interactive-apps.html">Interactive Apps</a></li>
+      <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <p class="copy">&copy; 2026 Batuhan Türk &middot; İTO Science and Art Center</p>
+  </div>
+</footer>
+<script src="assets/main.js" defer></script>
+</body>
+</html>
