@@ -92,9 +92,11 @@
       const render = () => {
         shown += (target - shown) * 0.14;
         if (Math.abs(target - shown) < 0.0005) shown = target;
+        let behind = false;
         if (duration) {
           const t = shown * (duration - 0.05);
-          if (Math.abs(video.currentTime - t) > 0.01) video.currentTime = t;
+          behind = Math.abs(video.currentTime - t) > 0.01;
+          if (behind && !video.seeking) video.currentTime = t;
         }
         const p = progress();
         const fade = Math.min(1, p / 0.4);
@@ -106,7 +108,7 @@
           endCap.style.opacity = String(e);
           endCap.style.transform = 'translateY(' + (16 * (1 - e)) + 'px)';
         }
-        if (shown !== target) requestAnimationFrame(render); else ticking = false;
+        if (shown !== target || behind) requestAnimationFrame(render); else ticking = false;
       };
 
       const onScroll = () => {
@@ -114,13 +116,25 @@
         if (!ticking) { ticking = true; requestAnimationFrame(render); }
       };
 
+      let started = false;
+      const ready = () => {
+        if (started || !video.duration) return;
+        started = true;
+        duration = video.duration;
+        try { video.currentTime = 0.001; } catch (e) {}
+        stage.classList.add('ready');
+        onScroll();
+      };
       const start = url => {
+        video.preload = 'auto';
+        video.muted = true;
+        video.setAttribute('muted', '');
         video.src = url;
-        video.addEventListener('loadedmetadata', () => {
-          duration = video.duration;
-          stage.classList.add('ready');
-          onScroll();
-        }, { once: true });
+        ['loadedmetadata', 'loadeddata', 'canplay'].forEach(ev => video.addEventListener(ev, ready));
+        video.load();
+        /* phones (iOS Safari) only decode frames after the video has played once */
+        const p = video.play();
+        if (p && p.then) p.then(() => { video.pause(); ready(); }).catch(() => {});
       };
 
       fetch(src).then(r => r.blob()).then(b => start(URL.createObjectURL(b))).catch(() => start(src));
